@@ -1,0 +1,109 @@
+:root {
+    /* Paleta de Colores Morado/Negro */
+    --color-primario: #5e35b1;      /* Morado Base Oscuro (Principal) */
+    --color-secundario: #4527a0;    /* <-- CORREGIDO: Morado Profundo (Hover/Accento) */
+    --color-terciario: #9c27b0;     /* Morado Brillante (Iconos grandes) */
+    --color-negro: #1a1a1a;         /* Negro Profundo */
+    --color-fondo: #f8f9fa;         /* Fondo General muy claro */
+    --color-texto: #343a40;         /* Texto Base Oscuro */
+    --color-claro: #f0f0f0;         /* Color para texto en fondos oscuros */
+    
+    /* Sombras y Transiciones */
+    --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --transition-speed: 0.3s;
+}
+
+body { 
+    background-color: var(--color-fondo); 
+    color: var(--color-texto);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-dark {
+    background-color: var(--color-negro);
+}
+
+/* ------------------------------------ */
+/* ESTILOS HERO SECTION (INDEX) Y LOGIN CONTAINER */
+/* ------------------------------------ */
+.hero-section {
+    /* Degradado de morado oscuro a negro (usa las variables corregidas) */
+    background: linear-gradient(135deg, var(--color-secundario) 0%, var(--color-negro) 100%);
+    height: 85vh;
+    color: white; /* <-- CORREGIDO: El texto del héroe debe ser blanco */
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding-top: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section .bi-tools {
+    color: var(--color-terciario) !important;
+}
+
+/* ------------------------------------ */
+/* BOTÓN PRINCIPAL */
+/* ------------------------------------ */
+.btn-principal {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+    color: white; /* <-- CORREGIDO: Usar blanco para el texto */
+    font-weight: 600;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed), transform var(--transition-speed);
+}
+.btn-principal:hover {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+    color: var(--color-claro); /* <-- CORREGIDO: Usar variable para el texto */
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------ */
+/* GENERALES */
+/* ------------------------------------ */
+.feature-icon {
+    font-size: 3.5rem;
+    color: var(--color-primario); 
+}
+
+.card {
+    transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+    border-radius: 0.5rem;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.footer-dark {
+    background-color: var(--color-negro);
+    color: var(--color-claro);
+}
+.footer-dark a {
+    color: var(--color-terciario);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+.footer-dark a:hover {
+    color: var(--color-primario); /* Usar el primario en hover */
+}
+
+/* ------------------------------------ */
+/* LOGIN SPECIFIC */
+/* ------------------------------------ */
+.login-container {
+    height: 100vh;
+    /* Degradado de morado oscuro a negro */
+    background: linear-gradient(135deg, var(--color-secundario) 0%, var(--color-negro) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    background-color: white;
+}
