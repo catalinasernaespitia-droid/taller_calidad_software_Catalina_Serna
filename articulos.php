@@ -1,4 +1,5 @@
 <?php
+define('MSG_ID_NO_ENVIADO', 'ID no enviado');
 include_once "db_conexion.php"; 
 $conexion = $conn;
 
@@ -139,7 +140,7 @@ exit();
 // =============================
 if ($action == 'visualizar') {
 
-    if (!isset($_GET['id'])) { die("ID no enviado"); }
+    if (!isset($_GET['id'])) { die(MSG_ID_NO_ENVIADO); }
 
     $id = intval($_GET['id']);
 
@@ -182,7 +183,7 @@ exit();
 // =============================
 if ($action == 'editar') {
 
-    if (!isset($_GET['id'])) { die("ID no enviado"); }
+    if (!isset($_GET['id'])) { die(MSG_ID_NO_ENVIADO); }
     $id = intval($_GET['id']);
 
     $res = $conexion->query("SELECT * FROM articulos WHERE id = $id");
@@ -263,7 +264,7 @@ exit();
 // =============================
 if ($action == 'borrar') {
 
-    if (!isset($_GET['id'])) { die("ID no enviado"); }
+    if (!isset($_GET['id'])) { die(MSG_ID_NO_ENVIADO); }
     $id = intval($_GET['id']);
 
     $sql = "DELETE FROM articulos WHERE id = $id";
