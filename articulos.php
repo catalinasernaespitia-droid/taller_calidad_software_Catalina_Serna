@@ -1,5 +1,5 @@
 <?php
-include "db_conexion.php"; 
+include_once "db_conexion.php"; 
 $conexion = $conn;
 
 // Obtener acción
